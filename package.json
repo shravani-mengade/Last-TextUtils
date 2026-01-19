@@ -1,10 +1,13 @@
 {
-    "homepage": "https://myusername.github.io/my-app",
+    "homepage": "https://shravani-mengade.github.io/Last-TextUtils",
+
     "name": "vite-react",
     "private": true,
     "version": "0.0.0",
     "type": "module",
     "scripts": {
+         "predeploy": "npm run build",
+         "deploy": "gh-pages -d dist",
         "dev": "vite",
         "build": "vite build",
         "lint": "eslint .",
