@@ -5,7 +5,7 @@ import React,{useState} from 'react'
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import Alert from "./components/Alert";
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   const [mode,setMode]=useState('light');
@@ -37,23 +37,23 @@ const showAlert=(message,type)=>{
 
   return (
    <>
-  {/* <BrowserRouter> */}
+  <BrowserRouter>
         <Navbar title="TextUtils" mode={mode} togglemode={togglemode} />
         <Alert alert={alert} />
       
     <div className="container my-3">  
-    {/* <Routes>
+    <Routes>
         <Route path="/about"
-         element={<About />} /> */}
+         element={<About mode={mode} />} />
 
-        {/* <Route path="/"  */}
-        {/*element={
-         <TextForm showAlert={showAlert} heading="Enter text to analyze below" mode={mode}/>} /> */}
-         <TextForm showAlert={showAlert} heading="Enter text to analyze below" mode={mode}/>
+        <Route path="/" 
+        element={
+         <TextForm showAlert={showAlert} heading="Try TextUtils-Word Counter,Character Counter!" mode={mode}/> }/>
       
-    {/* </Routes> */}
+   </Routes> 
     </div>
-    {/* </BrowserRouter> */}
+  </BrowserRouter> 
+       
     </>
   );
   
