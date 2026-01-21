@@ -44,9 +44,8 @@ return str
 }
 
 const handleCopy=()=>{
-  var newtext=document.getElementById("myBox");
-  newtext.select();
-  navigator.clipboard.writeText(newtext.value);
+
+  navigator.clipboard.writeText(text);
     props. showAlert("Copied to clipboard","success")
 }
 const handleExtraSpaces=()=>{
@@ -75,7 +74,7 @@ const handleExtraSpaces=()=>{
 
    <div className="container my-3 text-start " style={{color:props.mode==='dark'?'white':'black'}}>
 <h2>Your summary</h2>
-<p>{text.split(" ").filter((element)=>{element.length!=0}).length}words and {text.length}characters</p>
+<p>{text.split(/\s+/).filter((element)=>{element.length!=0}).length}words and {text.length}characters</p>
 <p>{0.008*text.split(" ").filter((element)=>{element.length!=0}).length} Minutes to read</p>
 <h3>Preview</h3>
 <p>{text.length>0?text:"enter something "}</p>
